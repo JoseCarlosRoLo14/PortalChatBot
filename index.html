@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://appservice.azureedge.net/images/static-apps/v3/favicon.svg"
+        type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <title>WebChatBot</title>
+</head>
+
+<body>
+    <div id="loading">
+        <div id="chatbot_button">
+            <img src="img/maresa_logo.png" alt="">
+        </div>
+        <div id="loading_text">
+            CARGANDO MART...
+        </div>
+    </div>
+    <script>
+        document.body.innerHTML += `
+            <div id="chatbot_chat">
+                <div id="chatbot_head">
+                    <div id="chatbot_logo"> <img src="img/maresa-center_white.png" alt=""> </div>
+                </div>
+                <div id="chatBot" role="main"></div>
+            </div>
+        `;
+        
+        const loading = document.getElementById('loading')
+
+        const queryString = window.location.search;
+        
+        const urlParams = new URLSearchParams(queryString);
+        const dt_var = urlParams.get('dt')
+
+        /* BOT CONFIG */
+
+        const styleSet = window.WebChat.createStyleSet({
+            rootHeight: '100%',
+
+            bubbleBackground: 'rgba(231, 130, 1, .1)',
+            bubbleFromUserBackground: 'rgba(0, 0, 0, .1)',
+
+            bubbleBorderColor: 'rgba(231, 130, 1, .1)',
+            
+            botAvatarBackgroundColor: 'transparent',
+            userAvatarBackgroundColor: 'rgba(0, 0, 0, .5)',
+
+            bubbleBorderRadius: '0 10px 10px 10px',
+            bubbleFromUserBorderRadius: '10px 0 10px 10px'
+        });
+        
+        const avatarOptions = {
+            botAvatarInitials: 'CM',
+            botAvatarImage: 'img/maresa_logo.png',
+            userAvatarInitials: 'Yo'
+        };
+
+        const activity_data = {
+            "current_channel" : "portal",
+            "dt": dt_var
+        }
+
+        var d1 = window.WebChat.createDirectLine({ token: 'faiIsnIlAHU.0mbS3OtVFfbg2920oXYu9aUcisEesH6DRDsYw3-1DKs' });
+        window.WebChat.renderWebChat(
+            {
+                directLine: {
+                    ...d1, 
+                    postActivity: activity => d1.postActivity({
+                        ...activity, 
+                        channelData: {
+                            ...activity.channelData,
+                            ...activity_data
+                        }
+                    })
+                },
+                styleSet,
+                styleOptions: avatarOptions
+            },
+            document.getElementById('chatBot')
+        );
+
+        /* ANIMATIONS AND SIZES */
+
+        let correct = false;
+        let count = 0;
+
+        let interval = setInterval(() => {
+            
+            if (count > 0) {
+                
+                let chatBot = document.getElementById('chatBot');
+    
+                if (chatBot) {
+
+                    let chatBot_current_height = chatBot.getBoundingClientRect().height;
+                    chatBot.style.maxHeight = chatBot_current_height + "px";
+                    correct = true;
+                }
+    
+                if (correct || count >= 5) {
+                    clearInterval(interval);                  
+                    loading.classList.add("close_load");
+
+                    setTimeout(() => {
+                        document.body.removeChild(loading)
+                    }, 1000)
+                } 
+            }
+
+            count++;
+            
+        }, 1500)
+
+        
+
+    </script>
+</body>
+</html>
