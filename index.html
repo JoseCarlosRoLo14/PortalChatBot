@@ -62,7 +62,7 @@
 
         const activity_data = {
             "current_channel" : "portal",
-            "dt": dt_var
+            "dt": dt_var.replaceAll(' ','+')
         }
 
         var d1 = window.WebChat.createDirectLine({ token: 'faiIsnIlAHU.0mbS3OtVFfbg2920oXYu9aUcisEesH6DRDsYw3-1DKs' });
