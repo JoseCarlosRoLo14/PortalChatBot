@@ -1,6 +1,6 @@
 {
     "globalHeaders": {
-        "content-security-policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; style-src-attr 'self'; img-src 'self'; connect-src https://maresachatbot.azurewebsites.net; manifest-src 'self'; connect-src https://cdn.botframework.com/botframework-webchat/latest/webchat.js; frame-ancestors menucmh.azurewebsites.net",
+        "content-security-policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; style-src-attr 'self'; img-src 'self'; connect-src https://maresachatbot.azurewebsites.net; manifest-src 'self'; script-src-elem https://cdn.botframework.com/botframework-webchat/latest/webchat.js; frame-ancestors menucmh.azurewebsites.net",
         "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
         "X-Frame-Options": "SAMEORIGIN",
         "X-Content-Type-Options": "nosniff"
