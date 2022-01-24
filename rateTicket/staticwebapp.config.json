@@ -1,6 +1,6 @@
 {
     "globalHeaders": {
-        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.botframework.com/botframework-webchat/latest/webchat.js; style-src 'self' 'unsafe-inline'; style-src-attr 'self'; img-src 'self' 'unsafe-inline'; connect-src https://maresachatbot.azurewebsites.net https://directline.botframework.com; manifest-src 'self'; frame-ancestors 'self' https://portalcmh.corpmaresa.com.ec https://menucmh.azurewebsites.net/",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.botframework.com/botframework-webchat/latest/webchat.js; style-src 'self' 'unsafe-inline'; style-src-attr 'self'; img-src 'self' 'unsafe-inline' https://polite-field-0ccee570f.azurestaticapps.net; connect-src https://maresachatbot.azurewebsites.net https://directline.botframework.com wss://directline.botframework.com; manifest-src 'self'; frame-ancestors 'self' https://portalcmh.corpmaresa.com.ec https://menucmh.azurewebsites.net/",
         "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
         "X-Content-Type-Options": "nosniff"
     }
