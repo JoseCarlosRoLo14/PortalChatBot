@@ -39,19 +39,32 @@
 
         /* BOT CONFIG */
 
-        const styleSet = window.WebChat.createStyleSet({
-            rootHeight: '100%',
+        var styleSet = window.WebChat.createStyleSet({
+           	bubbleBackground: 'rgb(245,245,245)',  
+           	          
+            bubbleBorderColor: 'rgba(58, 60, 61, .1)', 
+            bubbleBorderStyle: 'solid', 
+            bubbleBorderWidth: 1, 
+            bubbleFromUserBorderColor: 'rgba(231, 130, 1, 1)', 
+            bubbleFromUserBorderStyle: 'solid', 
+            bubbleFromUserBorderWidth: 1, 
+           
+            botAvatarBackgroundColor: 'transparent', 
+            userAvatarBackgroundColor: 'rgba(0, 0, 0, .5)', 
 
-            bubbleBackground: 'rgba(231, 130, 1, .1)',
-            bubbleFromUserBackground: 'rgba(0, 0, 0, .1)',
+            bubbleBorderRadius: '0 10px 10px 10px', 
+            bubbleFromUserBorderRadius: '10px 0 10px 10px', 
 
-            bubbleBorderColor: 'rgba(231, 130, 1, .1)',
-            
-            botAvatarBackgroundColor: 'transparent',
-            userAvatarBackgroundColor: 'rgba(0, 0, 0, .5)',
+            bubbleFromUserBorderColor: 'rgba(0, 0, 0, .1)', 
 
-            bubbleBorderRadius: '0 10px 10px 10px',
-            bubbleFromUserBorderRadius: '10px 0 10px 10px'
+            bubbleTextColor: 'rgba(36, 38, 39, 1)', 
+            bubbleFromUserTextColor: 'rgba(36, 38, 39, 1)', 
+
+            accent: 'rgba(58, 60, 61, 1)', 
+
+            suggestedActionBorderColor: 'rgba(231, 130, 1, 1)', 
+            suggestedActionBackground: 'transparent',
+            suggestedActionTextColor: 'rgba(231, 130, 1, 1)', 
         });
         
         const avatarOptions = {
